@@ -2,20 +2,21 @@ import React from 'react'
 import MainLayout from '@/layouts/MainLayout'
 import { getProjects } from '@/lib/data/projects'
 import AdminOverview from '@/components/Organisms/AdminOverview'
+import AboutOverview from '@/components/Organisms/AboutOverview'
 import { Metadata } from 'next'
 
-export default async function Page() {
-  const projects = await getProjects()
+export const dynamic = 'force-static'
 
+export default async function Page() {
   return (
     <MainLayout>
-      <AdminOverview projects={projects} />
+      <AboutOverview />
     </MainLayout>
   )
 }
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: 'Admin',
+    title: 'About',
   }
 }
