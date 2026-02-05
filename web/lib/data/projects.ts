@@ -1,6 +1,6 @@
 'use server'
 
-import { revalidateTag } from 'next/cache'
+import { revalidateTag, updateTag } from 'next/cache'
 
 export type Project = {
   createdAt: string
@@ -63,7 +63,7 @@ export const createProject = async ({
       return res.json()
     })
 
-    revalidateTag('projects', 'max')
+    updateTag('projects')
 
     return project
   } catch (error) {
@@ -91,7 +91,7 @@ export const updateProject = async ({
       return res.json()
     })
 
-    revalidateTag('projects', 'max')
+    updateTag('projects')
 
     return project
   } catch (error) {
@@ -111,7 +111,7 @@ export const deleteProject = async (id: string): Promise<Project> => {
       return res.json()
     })
 
-    revalidateTag('projects', 'max')
+    updateTag('projects')
 
     return project
   } catch (error) {

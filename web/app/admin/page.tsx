@@ -4,6 +4,8 @@ import { getProjects } from '@/lib/data/projects'
 import AdminOverview from '@/components/Organisms/AdminOverview'
 import { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Page() {
   const projects = await getProjects()
 
