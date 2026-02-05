@@ -1,5 +1,3 @@
-import type { NextConfig } from 'next'
-
 const nextConfig = {
   compiler: {
     styledComponents: true,
@@ -9,6 +7,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'plus.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'unsplash.com',
       },
     ],
   },
