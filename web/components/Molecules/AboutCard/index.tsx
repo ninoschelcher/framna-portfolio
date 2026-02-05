@@ -7,17 +7,24 @@ const AboutCard = () => {
     <AboutCardWrapper>
       <Header>About me</Header>
       <Text>
-        My name is Nino Schelcher. I am 27 years old, born and raised in Amsterdam. I have been
-        working as a front-end developer for 3 years now. After high school I studied
-        Applicatieontwikkelaar at the ROC Amsterdam where I learned more about web development.
-        After that study I decided to do the study Communication & Multimedia Design which "evolved"
-        me into a front-end developer. The thing I love the most about doing this job is being able
-        to go from a blank canvas to a full fledged product with me being the painter of that
-        canvas.
+        My name is Nino Schelcher, a 27-year-old front-end developer born and raised in Amsterdam. I
+        have three years of professional experience building modern, user-focused web applications.
+        After completing my studies in Applicatieontwikkelaar at ROC Amsterdam, where I first got in
+        touch with web development, I continued with the study Communication & Multimedia Design.
+        This combination helped me grow beyond pure development and shaped my understanding of
+        design, and user experience — ultimately evolving me into a front-end developer who values
+        both form and function.
       </Text>
       <Text>
-        In my free time I enjoy playing video games, playing a game of padel, reading a book or you
-        can find me in a cafe for a nice draft beer.
+        What I enjoy most about my work is the process of going from a blank canvas to a fully
+        realized product. I like translating ideas and designs into clean, maintainable code and
+        creating interfaces that feel intuitive and responsive for users. I enjoy working with
+        modern front-end technologies and continuously improving my skills by staying up to date
+        with new tools.
+      </Text>
+      <Text>
+        In my free time I enjoy playing video games, staying active with a game of padel, reading
+        books, or spending time in cafés enjoying a good draft beer.
       </Text>
     </AboutCardWrapper>
   )
