@@ -66,15 +66,27 @@ The admin page dynamically using Next.js Server Components and server-side data 
 - Font optimization using `next/font`
 - Efficient routing using the App Router
 
-## API
+## Testing
 
-The project uses [MockAPI](https://mockapi.io/) as a backend service. The API functions are located in `web/lib/data/projects.ts`:
+The project includes a small but focused test suite using **Jest** and **React Testing Library**:
 
-- `getProjects()` - Fetch all projects
-- `getProject(id)` - Fetch a single project
-- `createProject(data)` - Create a new project
-- `updateProject(id, data)` - Update an existing project
-- `deleteProject(id)` - Delete a project
+- **Component tests**
+    - `__tests__/components/ProjectOverview.test.tsx`
+        - Renders the `ProjectOverview` component with mock project data.
+        - Asserts that project titles and cards are rendered correctly.
+
+- **Action / data-layer tests**
+    - `__tests__/lib/projectActions.test.ts`
+        - `getProjects` – verifies that all projects are fetched from the correct API URL and that a failed response throws an error.
+        - `createProject` – checks that a new project is sent with the correct HTTP method and body, and that `updateTag('projects')` is called to invalidate cached project data.
+        - `updateProject` – checks that updating a project uses the correct URL and payload and triggers `updateTag('projects')`.
+        - `deleteProject` – checks that deletion calls the correct endpoint and also triggers `updateTag('projects')`.
+
+To run the tests:
+
+```bash
+pnpm test 
+```
 
 ## License
 
