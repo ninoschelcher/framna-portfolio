@@ -25,6 +25,13 @@ A modern portfolio website built with Next.js 16, showcasing projects, an about 
 - Node.js 18+
 - pnpm (recommended) or npm/yarn
 
+### Clone the repository
+
+``bash
+git clone git@github.com:ninoschelcher/framna-portfolio.git 
+cd framna-portfolio/web
+``
+
 ### Installation
 
 ```bash
