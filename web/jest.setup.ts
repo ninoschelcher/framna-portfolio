@@ -1,6 +1,5 @@
 import '@testing-library/jest-dom'
-import { jest } from '@jest/globals'
+import 'whatwg-fetch'
+import { TextEncoder, TextDecoder } from 'util'
 
-jest.mock('next/cache', () => ({
-  revalidateTag: jest.fn(),
-}))
+Object.assign(global, { TextDecoder, TextEncoder })

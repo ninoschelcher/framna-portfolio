@@ -20,6 +20,7 @@ import { FormProvider, useForm } from 'react-hook-form'
 import * as Yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { createProject, updateProject } from '@/lib/data/projects'
+import { ErrorText } from '@/components/Organisms/AdminOverview/styles'
 
 const createProjectSchema = Yup.object({
   title: Yup.string().required('Project name is required'),
@@ -81,6 +82,9 @@ const CreateProjectModal = ({ show, onClose, project }: CreateProjectModalProps)
               <Field>
                 <Label htmlFor="title">Title</Label>
                 <Input id="title" placeholder="My awesome project" {...methods.register('title')} />
+                {methods.formState.errors.title && (
+                  <ErrorText>{methods.formState.errors.title.message as string}</ErrorText>
+                )}
               </Field>
               <Field>
                 <Label htmlFor="description">Description</Label>
@@ -89,6 +93,9 @@ const CreateProjectModal = ({ show, onClose, project }: CreateProjectModalProps)
                   placeholder="This is a description"
                   {...methods.register('description')}
                 />
+                {methods.formState.errors.description && (
+                  <ErrorText>{methods.formState.errors.description.message as string}</ErrorText>
+                )}
               </Field>
               <Field>
                 <Label htmlFor="image">Image</Label>
@@ -97,6 +104,9 @@ const CreateProjectModal = ({ show, onClose, project }: CreateProjectModalProps)
                   placeholder="https://images.unsplash.com/photo-1761839258753"
                   {...methods.register('image')}
                 />
+                {methods.formState.errors.image && (
+                  <ErrorText>{methods.formState.errors.image.message as string}</ErrorText>
+                )}
               </Field>
             </Body>
             <Footer>

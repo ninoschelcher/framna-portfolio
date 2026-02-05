@@ -32,7 +32,7 @@ export const Header = styled.div({
 
 export const Title = styled.h3({
   fontSize: '20px',
-  fontWeight: 600,
+  fontWeight: 400,
 })
 
 export const CloseButton = styled.button({

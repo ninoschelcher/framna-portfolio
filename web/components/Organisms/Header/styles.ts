@@ -21,7 +21,7 @@ export const Nav = styled.nav({
   maxWidth: '1200px',
   margin: '0 auto',
   width: '100%',
-  padding: '16px 26px',
+  padding: '16px',
 })
 
 export const NavWrapper = styled.div({

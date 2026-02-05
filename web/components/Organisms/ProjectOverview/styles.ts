@@ -4,7 +4,7 @@ export const Wrapper = styled.section({
   display: 'flex',
   flexDirection: 'column',
   gap: '16px',
-  padding: '32px 24px',
+  padding: '32px 0px',
 })
 
 export const ProjectWrapper = styled.div({

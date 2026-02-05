@@ -10,8 +10,6 @@ import {
 import ProjectCard from '@/components/Molecules/ProjectCard'
 
 const ProjectOverview = ({ projects }: ProjectOverviewProps) => {
-  if (!projects.length) return <p>You currently have no projects</p>
-
   return (
     <Wrapper>
       <TextWrapper>
@@ -19,7 +17,7 @@ const ProjectOverview = ({ projects }: ProjectOverviewProps) => {
         <Text>Explore my latest projects and work</Text>
       </TextWrapper>
       <ProjectWrapper>
-        {projects.map((project) => (
+        {projects?.map((project) => (
           <ProjectCard project={project} key={project.id} />
         ))}
       </ProjectWrapper>

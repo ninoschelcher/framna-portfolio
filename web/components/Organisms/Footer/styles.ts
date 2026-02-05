@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.footer({
-  padding: '16px 24px',
+  padding: '36px',
 })
 
 export const Title = styled.p({

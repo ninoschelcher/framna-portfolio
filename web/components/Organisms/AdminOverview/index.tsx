@@ -67,7 +67,7 @@ const AdminOverview = ({ projects }: AdminOverviewProps) => {
                 </tr>
               </thead>
               <tbody>
-                {projects.map((project) => (
+                {projects?.map((project) => (
                   <Row key={project.id ?? project.title}>
                     <Td>
                       <ProjectCell>

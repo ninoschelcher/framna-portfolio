@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export const OverviewWrapper = styled.div({
   width: '100%',
-  padding: '16px 24px',
+  padding: '16px 0px',
   display: 'flex',
   flexDirection: 'column',
   gap: '8px',
@@ -101,4 +101,11 @@ export const ProjectThumbnail = styled(Image)({
 
 export const ProjectTitle = styled.span({
   fontWeight: 500,
+})
+
+export const ErrorText = styled.span({
+  display: 'block',
+  marginTop: '4px',
+  fontSize: '12px',
+  color: '#dc2626',
 })
