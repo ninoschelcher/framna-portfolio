@@ -19,8 +19,8 @@ export const Dialog = styled.div({
   boxShadow: '0 10px 15px -3px rgba(15, 23, 42, 0.3), 0 4px 6px -4px rgba(15, 23, 42, 0.25)',
   display: 'flex',
   flexDirection: 'column',
-  gap: '1rem',
-  padding: '1rem',
+  gap: '16px',
+  padding: '16px',
   zIndex: 50,
 })
 
@@ -33,16 +33,20 @@ export const Header = styled.div({
 export const Title = styled.h3({
   fontSize: '20px',
   fontWeight: 400,
+  margin: '0',
 })
 
 export const CloseButton = styled.button({
   border: 'none',
   background: 'transparent',
   cursor: 'pointer',
-  fontSize: '1.3rem',
+  fontSize: '24px',
   lineHeight: 1,
   color: '#6b7280',
   padding: 0,
+  position: 'absolute',
+  top: '16px',
+  right: '16px',
 })
 
 export const Form = styled.form({
@@ -91,18 +95,6 @@ export const TextArea = styled.textarea({
     boxShadow: '0 0 0 1px #111827',
   },
   fontFamily: 'inherit',
-})
-
-export const Select = styled.select({
-  borderRadius: '0.5rem',
-  border: '1px solid #d1d5db',
-  padding: '0.5rem 0.75rem',
-  fontSize: '0.9rem',
-  outline: 'none',
-  '&:focus': {
-    borderColor: '#111827',
-    boxShadow: '0 0 0 1px #111827',
-  },
 })
 
 export const Footer = styled.div({

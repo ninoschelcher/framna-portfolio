@@ -1,8 +1,8 @@
 import { createProject, deleteProject, getProjects, updateProject } from '@/lib/data/projects'
-import { updateTag } from 'next/cache'
+import { revalidatePath } from 'next/cache'
 
 jest.mock('next/cache', () => ({
-  updateTag: jest.fn(),
+  revalidatePath: jest.fn(),
 }))
 
 global.fetch = jest.fn()
@@ -12,7 +12,7 @@ const BASE_URL = 'https://6982270cc9a606f5d4493aff.mockapi.io/projects'
 describe('projects actions', () => {
   beforeEach(() => {
     ;(fetch as jest.Mock).mockReset()
-    ;(updateTag as jest.Mock).mockReset()
+    ;(revalidatePath as jest.Mock).mockReset()
   })
 
   it('getProjects fetches all projects', async () => {
@@ -37,7 +37,7 @@ describe('projects actions', () => {
     expect(result).toEqual(mockProjects)
   })
 
-  it('createProject posts data and calls updateTag', async () => {
+  it('createProject posts data and calls revalidatePath', async () => {
     const data = { title: 'New', description: 'D' }
     const mockCreated = {
       id: '1',
@@ -62,11 +62,11 @@ describe('projects actions', () => {
         body: JSON.stringify(data),
       }),
     )
-    expect(updateTag).toHaveBeenCalledWith('projects')
+    expect(revalidatePath).toHaveBeenCalledWith('/', 'layout')
     expect(result).toEqual(mockCreated)
   })
 
-  it('updateProject puts data and calls updateTag', async () => {
+  it('updateProject puts data and calls revalidatePath', async () => {
     const data = { title: 'Updated title', description: 'Update description' }
     const mockUpdated = {
       id: '1',
@@ -91,11 +91,11 @@ describe('projects actions', () => {
         body: JSON.stringify(data),
       }),
     )
-    expect(updateTag).toHaveBeenCalledWith('projects')
+    expect(revalidatePath).toHaveBeenCalledWith('/', 'layout')
     expect(result).toEqual(mockUpdated)
   })
 
-  it('deleteProject deletes a project and calls updateTag', async () => {
+  it('deleteProject deletes a project and calls revalidatePath', async () => {
     const mockDeleted = {
       id: '1',
       title: 'Deleted project',
@@ -115,16 +115,16 @@ describe('projects actions', () => {
       `${BASE_URL}/1`,
       expect.objectContaining({ method: 'DELETE' }),
     )
-    expect(updateTag).toHaveBeenCalledWith('projects')
+    expect(revalidatePath).toHaveBeenCalledWith('/', 'layout')
     expect(result).toEqual(mockDeleted)
   })
-})
 
-it('throws if getProjects response is not ok', async () => {
-  ;(fetch as jest.Mock).mockResolvedValueOnce({
-    ok: false,
-    status: 500,
+  it('throws if getProjects response is not ok', async () => {
+    ;(fetch as jest.Mock).mockResolvedValueOnce({
+      ok: false,
+      status: 500,
+    })
+
+    await expect(getProjects()).rejects.toThrow('getProjects failed with status 500')
   })
-
-  await expect(getProjects()).rejects.toThrow('getProjects failed with status 500')
 })

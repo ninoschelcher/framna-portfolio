@@ -1,6 +1,6 @@
 'use server'
 
-import { revalidateTag, updateTag } from 'next/cache'
+import { revalidatePath } from 'next/cache'
 
 export type Project = {
   createdAt: string
@@ -16,7 +16,6 @@ export const getProjects = async (): Promise<Project[]> => {
   try {
     return await fetch(BASE_URL, {
       method: 'GET',
-      next: { tags: ['projects'] },
     }).then((res) => {
       if (!res.ok) {
         throw new Error(`getProjects failed with status ${res.status}`)
@@ -63,7 +62,7 @@ export const createProject = async ({
       return res.json()
     })
 
-    updateTag('projects')
+    revalidatePath('/', 'layout')
 
     return project
   } catch (error) {
@@ -91,7 +90,7 @@ export const updateProject = async ({
       return res.json()
     })
 
-    updateTag('projects')
+    revalidatePath('/', 'layout')
 
     return project
   } catch (error) {
@@ -111,7 +110,7 @@ export const deleteProject = async (id: string): Promise<Project> => {
       return res.json()
     })
 
-    updateTag('projects')
+    revalidatePath('/', 'layout')
 
     return project
   } catch (error) {

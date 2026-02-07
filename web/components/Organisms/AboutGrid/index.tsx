@@ -8,7 +8,6 @@ import {
   CardTitle,
 } from '@/components/Organisms/AboutGrid/styles'
 import { CodeBracketIcon, ViewColumnsIcon, WrenchScrewdriverIcon } from '@heroicons/react/16/solid'
-import { Container } from '@/layouts/MainLayout/styles'
 
 const aboutData = [
   {

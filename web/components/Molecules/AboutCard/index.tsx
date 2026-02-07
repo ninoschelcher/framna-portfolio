@@ -11,9 +11,9 @@ const AboutCard = () => {
         have three years of professional experience building modern, user-focused web applications.
         After completing my studies in Applicatieontwikkelaar at ROC Amsterdam, where I first got in
         touch with web development, I continued with the study Communication & Multimedia Design.
-        This combination helped me grow beyond pure development and shaped my understanding of
-        design, and user experience — ultimately evolving me into a front-end developer who values
-        both form and function.
+        This combination helped me grow beyond justdevelopment and shaped my understanding of
+        design, and user experience turning me into a froxnt-end developer who values both form and
+        function.
       </Text>
       <Text>
         What I enjoy most about my work is the process of going from a blank canvas to a fully

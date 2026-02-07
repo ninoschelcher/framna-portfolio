@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <Wrapper>
       <Nav>
-        <Title>Nino's Portfolio</Title>
+        <Title>Nino&apos;s Portfolio</Title>
         <NavWrapper>
           {routes.map(({ label, href }) => (
             <NavItem key={label} href={href}>

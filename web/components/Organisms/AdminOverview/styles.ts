@@ -79,10 +79,10 @@ export const ButtonWrapper = styled.div({
 })
 
 export const EmptyState = styled.div({
-  padding: '2rem',
+  padding: '16rem',
   textAlign: 'center',
   color: '#6b7280',
-  fontSize: '0.9rem',
+  fontSize: '16px',
 })
 
 export const ProjectCell = styled.div({
