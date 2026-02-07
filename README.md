@@ -80,7 +80,7 @@ The project includes a small but focused test suite using **Jest** and **React T
         - Renders the `ProjectOverview` component with mock project data.
         - Asserts that project titles and cards are rendered correctly.
 
-- **Action / data-layer tests**
+- **Fetch tests**
     - `__tests__/lib/projectActions.test.ts`
         - `getProjects` – verifies that all projects are fetched from the correct API URL and that a failed response throws an error.
         - `createProject` – checks that a new project is sent with the correct HTTP method and body, and that `revalidatePath('/', 'layout)` is called to invalidate cached project data.
