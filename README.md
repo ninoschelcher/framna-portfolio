@@ -27,10 +27,10 @@ A modern portfolio website built with Next.js 16, showcasing projects, an about 
 
 ### Clone the repository
 
-``bash
+```bash
 git clone git@github.com:ninoschelcher/framna-portfolio.git 
 cd framna-portfolio/web
-``
+```
 
 ### Installation
 
